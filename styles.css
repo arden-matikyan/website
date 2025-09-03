@@ -4,9 +4,17 @@
   box-sizing: border-box;
   margin: 500;
   padding: 500;
+  scroll-behavior: smooth;
 }
 
 :root {
+
+  --base-paper: #fff2e095;
+  --base-lav-one: #C0C9EE;
+  --base-lav-two: #A2AADB;
+  --base-lav-three: #898AC4;
+
+
   --b-base: #555;
   --blue: #001cbb28;
   --green: #368a52;
@@ -29,6 +37,7 @@ a {
 }
 
 header {
+  
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 40px;
@@ -48,7 +57,7 @@ header {
 
     .logo {
       display: flex;
-      background-color: var(--dark-grey);
+      background-color: var(--base-lav-three);
       color: var(--white);
       font-size: 24px;
       height: 64px;
@@ -85,7 +94,7 @@ header {
           padding: 8px 15px;
 
           &:hover {
-            background-color: var(--light-grey);
+            background-color: var(--base-lav-two);
             color: var(--white);
             border-radius: 5px;
             text-decoration: none;
@@ -94,13 +103,13 @@ header {
       }
 
       menu-toggle {
-        color: var(--green);
+        color: var(--base-lav-three);
       }
     }
 
     .menu-toggle {
       display: none;
-      color: var(--base-800);
+      color: var(--base-lav-three);
       padding: 10px;
       margin-top: 20px;
 
@@ -148,6 +157,7 @@ body {
   font-family: 'Roboto Flex', sans-serif;
   font-weight: 400;
   font-style: normal;
+  background: var(--base-paper);
 }
 
 
@@ -164,12 +174,12 @@ body {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: var(--blue-dark);
+  background-color: var(--base-lav-one);
   color: var(--white);
   border-radius: 5px;
 
   &:hover {
-    background-color: var(--dark-grey);
+    background-color: var(--base-lav-three);
   }
 
   transition: ease 0.3s;
@@ -201,9 +211,9 @@ p1 {
     text-align: center;
   }
 
-  background-color: var(--blue);
-    padding: 30px;
-    border-radius: 30px;
+  background-color: var(--base-lav-one);
+  padding: 30px;
+  border-radius: 30px;
 
   .hero-image {
     flex: 1;
@@ -225,7 +235,7 @@ p1 {
 
   .hero-text {
     flex: 1;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -260,27 +270,28 @@ p1 {
 
 }
 
-.work{
-  
-}
+.work {}
 
-.logos{
-  background-color: var(--light-purple);
+.logos {
+  background-color: var(--base-lav-two);
   border-radius: 30px;
   padding: 25px 20px;
-  @media(max-width:1440px){
+
+  @media(max-width:1440px) {
     border-radius: 0px;
   }
-  .marquee{
+
+  .marquee {
     width: 100wv;
     max-width: 100%;
     height: 120px;
     overflow: hidden;
     position: relative;
-    .track{
+
+    .track {
       position: absolute;
       white-space: nowrap;
-      will-change: transform;   
+      will-change: transform;
       animation: marquee 20s linear infinite;
       display: flex;
       gap: 50px;
@@ -292,14 +303,191 @@ p1 {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
-  
+
 }
 
 .logos img {
-  width: 100px;   /* change this to resize all logos */
-  height: auto;   /* keeps aspect ratio */
-  margin: 0px 10px; /* optional spacing between logos */
+  width: 100px;
+  /* change this to resize all logos */
+  height: auto;
+  /* keeps aspect ratio */
+  margin: 0px 10px;
+  /* optional spacing between logos */
+}
+
+.projects.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-box {
+  background: var(--base-lav-one);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 18px 24px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+
+}
+
+.project-box:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.project-details {
+  margin-top: 14px;
+  display: none;
+  color: #333;
+  font-size: 0.98rem;
+}
+
+.project-box.active .project-details {
+  display: block;
+  transition: all 0.8s ease;
+}
+.project-box.active {
+  background: var(--base-lav-three);
+  color: var(--white);
+  transition: background 0.3s, color 0.3s;
+}
+
+.photostream.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.photo-item {
+    position: relative;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 180px;
+    max-width: 320px;
+    height: 180px; /* Equal height for all rows */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+}
+
+.photo-item.landscape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.photo-item.portrait img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+}
+
+.photo-item .caption {
+    display: none;
+}
+
+.photo-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-popup.active {
+    display: flex;
+}
+
+.popup-content {
+    position: relative;
+    background: var(--base-paper);
+    border-radius: 12px;
+    padding: 24px 24px 16px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-content img {
+    max-width: 80vw;
+    max-height: 60vh;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2rem;
+    color: var(--dark-grey);
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    padding: 2px 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--base-lav-three);
+    color: var(--white);
+}
+
+.popup-caption {
+    font-size: 1.1rem;
+    color: var(--b-text);
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }

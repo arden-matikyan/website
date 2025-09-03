@@ -51,7 +51,40 @@
 
         </nav>
     </header>
-   
+    <main>
+        <section class="photostream container">
+            <h1>Photostream</h1>
+            <p2>A curated selection of my photography, dslr and film, showcasing a variety of styles and subjects. From stunning landscapes to intimate portraits, each image reflects my passion for capturing moments and telling stories through the lens. Click <a href="https://www.flickr.com/people/amatikyan/">here</a> to view my full gallery.</p2>
+            <div class="photo-grid">
+                <!-- Example images, replace src and captions as needed -->
+                <div class="photo-item landscape">
+                    <img src="./photo/webphotos/53284794253_3c36fb6132_b.jpg" alt="Photo 1" onclick="openPhoto(this)">
+                    <div class="caption">Landscape Caption 1</div>
+                </div>
+                <div class="photo-item portrait">
+                    <img src="./photo/webphotos/snowy-night_54225129970_l.jpg" alt="Photo 2" onclick="openPhoto(this)">
+                    <div class="caption">Portrait Caption 2</div>
+                </div>
+                <div class="photo-item landscape">
+                    <img src="photo/webphotos/53284996095_8122daf0b5_b.jpg" alt="Photo 3" onclick="openPhoto(this)">
+                    <div class="caption">Landscape Caption 3</div>
+                </div>
+                <div class="photo-item portrait">
+                    <img src="photo/webphotos/foggy-forest_53284902764_l.jpg" alt="Photo 4" onclick="openPhoto(this)">
+                    <div class="caption">Portrait Caption 4</div>
+                </div>
+                <!-- Add up to 20 photo-item divs as needed -->
+            </div>
+        </section>
+        <div id="photo-popup" class="photo-popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePhotoPopup()">&times;</span>
+                <img id="popup-img" src="" alt="Full Size">
+                <div id="popup-caption" class="popup-caption"></div>
+            </div>
+        </div>
+    </main>
+
 </body>
 
 </html>
