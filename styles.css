@@ -255,9 +255,14 @@ p1 {
       margin-bottom: 20px;
 
       a {
+        color: var(--black);
         margin-right: 10px;
         margin-left: 0px;
+        &:hover{
+          color: #fff;
+        }
       }
+      
     }
 
     .social-links {
@@ -377,7 +382,7 @@ p1 {
 
 
 .project-box {
-  background: var(--base-lav-one);
+  background: var(--base-lav-two);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 18px 24px;
@@ -420,19 +425,18 @@ p1 {
   transition: all 0.8s ease;
 }
 .project-box.active {
-  background: var(--base-lav-three);
+  background: var(--base-lav-one);
   color: var(--white);
   transition: background 0.3s, color 0.3s;
 }
 
-.gallery.container p1 a:hover {
-  font-weight: bold;
+.gallery.container p1 a {
   text-decoration: underline; /* optional for emphasis */
 }
-
-.gallery a:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+.gallery.container p1 a:hover {
+  color: var(--blue-dark)
 }
+
 
 .gallery img {
   display: block;
