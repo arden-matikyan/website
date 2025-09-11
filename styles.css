@@ -219,6 +219,7 @@ p1 {
   @media (max-width: 1024px) {
     flex-direction: column;
     text-align: center;
+    padding: 30px;
   }
 
   background-color: var(--base-lav-one);
